@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Data Diri</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">MyProfile</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang Saya</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="jumbotron text-center pt-5 mt-5 bg-white">
+      <img src="Profile.jpg" alt="Foto Profil" width="200" class="rounded-circle img-thumbnail mt-4 mb-3 shadow">
+      <h1 class="display-4 fw-bold">Nama Lengkap Anda</h1>
+      <p class="lead">Mahasiswa Manajemen Informatika | Web Developer</p>
+      <hr class="my-4 w-50 mx-auto">
+    </section>
+
+    <section id="about" class="container py-5">
+        <div class="row text-center mb-3">
+            <div class="col">
+                <h2 class="fw-bold">Tentang Saya</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center fs-5">
+            <div class="col-md-8 text-center mb-4">
+                <p>Halo! Saya adalah mahasiswa jurusan Manajemen Informatika. Saya memiliki minat besar dalam pengembangan website dan analisis sistem. Website ini adalah salah satu hasil pembelajaran saya menggunakan Bootstrap dan jQuery.</p>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center fw-bold">Biodata Diri</div>
+                    <ul class="list-group list-group-flush fs-6">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Nama Lengkap:</strong> <span>Nama Anda</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Tempat Lahir:</strong> <span>Palembang</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Tanggal Lahir:</strong> <span>01 Januari 2003</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Jurusan:</strong> <span>Manajemen Informatika</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Alamat:</strong> <span>Jl. Jendral Sudirman No. 123</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <div class="row text-center mb-3">
+                <div class="col">
+                    <h2 class="fw-bold">Hubungi Saya</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-sm p-3">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Masukkan nama anda..">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="email@contoh.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Pesan</label>
+                                <textarea class="form-control" rows="3" placeholder="Tulis pesan anda disini.."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" id="btnKirim">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white text-center pb-3 pt-3 mt-5">
+        <p class="mb-0">Dibuat dengan <span class="text-danger">❤</span> oleh <strong>Nama Anda</strong></p>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

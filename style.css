@@ -1,0 +1,22 @@
+body {
+    background-color: #f3f4f5;
+    font-family: Arial, sans-serif;
+}
+
+section {
+    padding-top: 5rem; /* Memberi jarak agar judul tidak tertutup navbar saat discroll */
+}
+
+.navbar {
+    opacity: 0.95; /* Sedikit transparan agar terlihat elegan */
+}
+
+/* Mempercantik Foto Profil */
+.img-thumbnail {
+    border: 5px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.05); /* Efek zoom sedikit saat mouse diarahkan ke foto */
+}
