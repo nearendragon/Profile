@@ -11,105 +11,113 @@
 </head>
 <body id="home">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#home">MyProfile</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">Tentang Saya</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-          </ul>
+    <div class="sidebar bg-black">
+        <div class="d-flex flex-column align-items-center py-4">
+            <a class="navbar-brand fw-bold text-white fs-3 mb-5" href="#home">SnapFolio</a>
+            <ul class="nav flex-column w-100">
+                <li class="nav-item"><a class="nav-link active" href="#home"><i class="bi bi-house-fill me-2"></i>Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-person-fill me-2"></i>Tentang Saya</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-envelope-fill me-2"></i>Kontak</a></li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
 
-    <section class="jumbotron text-center pt-5 mt-5 bg-white">
-      <img src="Profile.jpg" alt="Foto Profil" width="200" class="rounded-circle img-thumbnail mt-4 mb-3 shadow">
-      <h1 class="display-4 fw-bold">Ardian Narendra Maulana</h1>
-      <p class="lead">Mahasiswa Manajemen Informatika | Web Developer</p>
-      <hr class="my-4 w-50 mx-auto">
-    </section>
-
-    <section id="about" class="container py-5">
-        <div class="row text-center mb-3">
-            <div class="col">
-                <h2 class="fw-bold">Tentang Saya</h2>
-            </div>
-        </div>
-        <div class="row justify-content-center fs-5">
-            <div class="col-md-8 text-center mb-4">
-                <p>Halo! Saya adalah mahasiswa jurusan Manajemen Informatika. Saya memiliki minat besar dalam pengembangan website dan analisis sistem. Website ini adalah salah satu hasil pembelajaran saya menggunakan Bootstrap dan jQuery.</p>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-black text-white text-center fw-bold">Biodata Diri</div>
-                    <ul class="list-group list-group-flush fs-6">
-                        <li class="list-group-item d-flex justify-content-between">
-                            <strong>Nama Lengkap:</strong> <span>Ardian Narendra Maulana</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <strong>Tempat Lahir:</strong> <span>Palembang</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <strong>Tanggal Lahir:</strong> <span>15 Januari 2005</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <strong>Jurusan:</strong> <span>Manajemen Informatika</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <strong>Alamat:</strong> <span>Jl. Anggrek Komp.Sasana Patra</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-light py-5">
-        <div class="container">
-            <div class="row text-center mb-3">
-                <div class="col">
-                    <h2 class="fw-bold">Hubungi Saya</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card shadow-sm p-3">
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nameInput" placeholder="Masukkan nama anda..">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="email@contoh.com">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Pesan</label>
-                                <textarea class="form-control" rows="3" placeholder="Tulis pesan anda disini.."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100" id="btnKirim">Kirim Pesan</button>
-                        </form>
+    <div class="main-content">
+        <section class="jumbotron text-white pt-5 mt-0 bg-black" style="height: 100vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h1 class="display-4 fw-bold mb-3" style="font-size: 4rem;">SnapFolio</h1>
+                        <h2 class="mb-4">Alexander Chen</h2>
+                        <p class="lead mb-5">I'm a Creative Web Developer. Passionate about creating exceptional digital experiences that blend innovative design with functional development. Let's bring your vision to life.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#about" class="btn btn-dark btn-lg rounded-0 px-4 py-2">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg rounded-0 px-4 py-2">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <img src="Profile.jpg" alt="Foto Profil" class="img-fluid profile-image mt-4 mb-3 shadow-lg">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-black text-white text-center pb-3 pt-3 mt-5">
-        <p class="mb-0">Dibuat dengan <span class="text-danger">❤</span> oleh <strong>Nama Anda</strong></p>
-    </footer>
+        <section id="about" class="container py-5">
+            <div class="row text-center mb-3">
+                <div class="col">
+                    <h2 class="fw-bold">Tentang Saya</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center fs-5">
+                <div class="col-md-8 text-center mb-4">
+                    <p>Halo! Saya adalah mahasiswa jurusan Manajemen Informatika. Saya memiliki minat besar dalam pengembangan website dan analisis sistem. Website ini adalah salah satu hasil pembelajaran saya menggunakan Bootstrap dan jQuery.</p>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-black text-white text-center fw-bold rounded-0">Biodata Diri</div>
+                        <ul class="list-group list-group-flush fs-6">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <strong>Nama Lengkap:</strong> <span>Alexander Chen</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <strong>Tempat Lahir:</strong> <span>Palembang</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <strong>Tanggal Lahir:</strong> <span>01 Januari 2003</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <strong>Jurusan:</strong> <span>Manajemen Informatika</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <strong>Alamat:</strong> <span>Jl. Jendral Sudirman No. 123</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-light py-5">
+            <div class="container">
+                <div class="row text-center mb-3">
+                    <div class="col">
+                        <h2 class="fw-bold">Hubungi Saya</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm p-3 border-0 rounded-0">
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control rounded-0" id="nameInput" placeholder="Masukkan nama anda..">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control rounded-0" id="emailInput" placeholder="email@contoh.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Pesan</label>
+                                    <textarea class="form-control rounded-0" rows="3" placeholder="Tulis pesan anda disini.."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-black w-100 rounded-0" id="btnKirim">Kirim Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-black text-white text-center pb-3 pt-3 mt-5">
+            <p class="mb-0">Dibuat dengan <span class="text-danger">❤</span> oleh <strong>Alexander Chen</strong></p>
+        </footer>
+    </div>
 
     <script src="js/jquery.min.js"></script>
-    
     <script src="js/bootstrap.bundle.min.js"></script>
-    
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"></script>
 
 </body>
 </html>
