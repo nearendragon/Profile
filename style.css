@@ -1,22 +1,155 @@
+/* --- 1. SETUP UTAMA & FONT --- */
 body {
-    background-color: #f3f4f5;
-    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Latar belakang putih bersih */
+    color: #1a1a1a; /* Warna teks hitam pudar (supaya tidak sakit mata) */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 section {
-    padding-top: 5rem; /* Memberi jarak agar judul tidak tertutup navbar saat discroll */
+    padding-top: 6rem;
+    padding-bottom: 2rem;
 }
 
+/* --- 2. CUSTOM WARNA HITAM (Pengganti Biru) --- */
+.bg-black {
+    background-color: #000000 !important; /* Hitam pekat */
+    color: #ffffff;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+/* --- 3. NAVBAR MODERN --- */
 .navbar {
-    opacity: 0.95; /* Sedikit transparan agar terlihat elegan */
+    background-color: rgba(255, 255, 255, 0.95) !important; /* Navbar putih transparan */
+    border-bottom: 1px solid #eaeaea; /* Garis tipis di bawah */
+    box-shadow: none; /* Hilangkan bayangan tebal */
+    backdrop-filter: blur(10px); /* Efek blur di belakang navbar (seperti iPhone) */
 }
 
-/* Mempercantik Foto Profil */
+.navbar-brand {
+    color: #000 !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    margin-left: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000 !important;
+}
+
+/* Efek garis bawah saat hover menu */
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Khusus tombol toggle di HP jadi hitam */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+.navbar-toggler {
+    border-color: #000 !important;
+}
+
+/* --- 4. HERO SECTION / JUMBOTRON --- */
+.jumbotron {
+    background-color: #fff;
+    padding-top: 8rem;
+}
+
+.jumbotron h1 {
+    font-weight: 800;
+    letter-spacing: -1px; /* Huruf agak rapat biar modern */
+}
+
+/* Foto Profil Hitam Putih Elegan */
 .img-thumbnail {
-    border: 5px solid #fff;
-    transition: transform 0.3s ease;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    filter: grayscale(100%); /* Bikin foto jadi hitam putih otomatis */
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .img-thumbnail:hover {
-    transform: scale(1.05); /* Efek zoom sedikit saat mouse diarahkan ke foto */
+    filter: grayscale(0%); /* Saat dihover, warna asli muncul */
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* --- 5. CARD & LIST (BIODATA) --- */
+.card {
+    border: 1px solid #000; /* Border kotak hitam tegas */
+    border-radius: 0; /* Sudut kotak (tidak tumpul) biar kesan modern */
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1); /* Bayangan solid */
+}
+
+.card-header {
+    background-color: #000 !important;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.list-group-item {
+    border: 1px solid #f0f0f0;
+}
+
+/* --- 6. FORM & INPUT --- */
+.form-control {
+    border-radius: 0; /* Kotak tajam */
+    border: 2px solid #ddd;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #000;
+    box-shadow: none; /* Hilangkan glow biru bawaan bootstrap */
+}
+
+/* Tombol Kirim */
+.btn-primary {
+    background-color: #000 !important;
+    border: 2px solid #000 !important;
+    color: #fff !important;
+    border-radius: 0; /* Tombol kotak */
+    padding: 10px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    background-color: #000 !important;
+    color: #fff;
+    font-size: 0.9rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
 }
