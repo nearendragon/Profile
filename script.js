@@ -1,54 +1,41 @@
 $(document).ready(function() {
-    
-    // --- FITUR 1: Smooth Scroll saat menu diklik ---
-    $('.nav-link').on('click', function(e) {
-        // Mencegah perilaku default link
-        var tujuan = $(this).attr('href');
-        var elemenTujuan = $(tujuan);
 
-        // Jika elemen tujuan ada
-        if (elemenTujuan.length) {
+    // 1. Smooth Scroll (Efek halus saat klik menu)
+    $('a.list-group-item, .btn').on('click', function(e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            var hash = this.hash;
+
             $('html, body').animate({
-                scrollTop: elemenTujuan.offset().top - 50
-            }, 800, 'swing');
-
-            // Mengatur menu aktif
-            $('.nav-link').removeClass('active');
-            $(this).addClass('active');
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
         }
     });
 
-    // --- FITUR 2: Validasi Tombol Kirim ---
+    // 2. Tombol Kirim (Alert)
     $('#btnKirim').click(function(e){
-        e.preventDefault(); // Mencegah halaman reload
-        
+        e.preventDefault();
         var nama = $('#nameInput').val();
-        var email = $('#emailInput').val();
-
-        if(nama == "" || email == ""){
-            alert("Harap lengkapi Nama dan Email sebelum mengirim!");
+        if(nama == ""){
+            alert("Silakan isi nama Anda terlebih dahulu.");
         } else {
-            // Simulasi pengiriman sukses
-            alert("Halo " + nama + "! Pesan Anda berhasil dikirim (Simulasi).");
-            // Kosongkan form setelah kirim
-            $('#nameInput').val('');
-            $('#emailInput').val('');
-            $('textarea').val('');
+            alert("Terima kasih " + nama + ", pesan simulasi terkirim!");
+            $('form')[0].reset();
         }
     });
 
-    // --- FITUR 3: Parallax effect sederhana pada Jumbotron ---
+    // 3. Highlight Menu saat Scroll (Spy Scroll Manual)
     $(window).scroll(function() {
-        var wScroll = $(this).scrollTop();
-        
-        // Foto profil turun lebih lambat dari scroll (efek parallax)
-        $('.jumbotron img').css({
-            'transform': 'translate(0px, '+ wScroll/4 +'%)'
-        });
-
-        // Teks turun lebih cepat
-        $('.jumbotron h1').css({
-            'transform': 'translate(0px, '+ wScroll/2 +'%)'
+        var scrollPos = $(document).scrollTop();
+        $('.list-group-item').each(function() {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos + 100 && refElement.position().top + refElement.height() > scrollPos) {
+                $('.list-group-item').removeClass("active");
+                currLink.addClass("active");
+            }
         });
     });
 

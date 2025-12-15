@@ -1,189 +1,78 @@
-/* --- 1. SETUP UTAMA & FONT --- */
+/* --- GLOBAL STYLE --- */
 body {
-    background-color: #ffffff;
-    color: #1a1a1a;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    display: flex;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 1000;
-    background-color: #000000;
-    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
     overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 20px;
+    background-color: #000; /* Hitam pekat */
 }
 
-.main-content {
-    margin-left: 250px; /* Same width as the sidebar */
-    padding: 0;
-    flex: 1;
+/* --- SIDEBAR STYLE (KIRI) --- */
+#sidebar-wrapper {
+    min-height: 100vh; /* Tinggi Full Layar */
+    width: 280px;      /* Lebar Sidebar */
+    position: fixed;   /* Tetap di tempat saat scroll */
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    border-right: 1px solid #333; /* Garis tipis pemisah */
 }
 
-section {
-    padding-top: 6rem;
-    padding-bottom: 2rem;
-}
-
-/* --- 2. CUSTOM WARNA HITAM (Pengganti Biru) --- */
-.bg-black {
-    background-color: #000000 !important;
-    color: #ffffff;
-}
-
-.text-black {
-    color: #000000 !important;
-}
-
-.btn-black {
-    background-color: #000000;
-    color: #ffffff;
-    border: 2px solid #000000;
-}
-
-.btn-black:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-.btn-outline-light {
-    border: 2px solid #fff;
-    color: #fff;
-}
-
-.btn-outline-light:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-
-/* --- 3. SIDEBAR NAV --- */
-.sidebar .nav-link {
-    padding: 15px 20px;
-    text-align: left;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar .nav-link:hover {
-    color: #f1f1f1;
-}
-
-.sidebar .nav-link.active {
-    color: #fff;
-    background-color: rgba(255,255,255,0.1);
-}
-
-.sidebar .navbar-brand {
+/* Menu Item saat Aktif / Hover */
+.list-group-item-action:hover, 
+.list-group-item-action.active {
+    background-color: #000 !important;
     color: #fff !important;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    border-right: 4px solid #fff; /* Efek garis putih di kanan menu */
 }
 
-
-/* --- 4. HERO SECTION / JUMBOTRON --- */
-.jumbotron {
-    padding-top: 8rem;
+/* --- KONTEN UTAMA (KANAN) --- */
+#page-content-wrapper {
+    margin-left: 280px; /* Geser konten ke kanan sebesar lebar sidebar */
+    width: calc(100% - 280px);
 }
 
-.jumbotron h1 {
-    font-weight: 800;
-    letter-spacing: -1px;
+/* --- HERO IMAGE STYLE --- */
+.img-hero {
+    border-radius: 30px; /* Sudut melengkung seperti di contoh */
+    max-height: 80vh;    /* Agar tidak terlalu tinggi */
+    object-fit: cover;
+    filter: grayscale(20%); /* Sedikit efek abu-abu biar elegan */
+    transition: 0.5s;
 }
 
-/* Foto Profil Hitam Putih Elegan */
-.profile-image {
-    border: none;
-    border-radius: 20px;
-    /* filter: grayscale(100%);  Remove grayscale if you want color */
-    transition: all 0.5s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    width: 80%;
-    max-width: 400px;
-}
-
-.profile-image:hover {
-    /* filter: grayscale(0%); */
+.img-hero:hover {
+    filter: grayscale(0%);
     transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* --- 5. CARD & LIST (BIODATA) --- */
-.card {
-    border: 1px solid #000;
-    border-radius: 0;
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+/* --- UTILITIES --- */
+.text-justify {
+    text-align: justify;
 }
 
-.card-header {
-    background-color: #000 !important;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 0 !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.list-group-item {
-    border: 1px solid #f0f0f0;
-}
-
-/* --- 6. FORM & INPUT --- */
-.form-control {
-    border-radius: 0;
-    border: 2px solid #ddd;
-    padding: 10px;
-}
-
-.form-control:focus {
-    border-color: #000;
-    box-shadow: none;
-}
-
-/* --- 7. FOOTER --- */
-footer {
-    background-color: #000 !important;
-    color: #fff;
-    font-size: 0.9rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-top: 4rem;
-}
-
-/* --- 8. Responsive untuk Layar Kecil --- */
-@media (max-width: 768px) {
-    body {
-        display: block;
-    }
-    .sidebar {
+/* --- RESPONSIVE (HP) --- */
+/* Jika layar kecil (HP), sidebar hilang atau jadi di atas */
+@media (max-width: 992px) {
+    #sidebar-wrapper {
         position: relative;
         width: 100%;
         height: auto;
-        padding-top: 10px;
-        text-align: center;
+        min-height: auto;
     }
-    .sidebar .nav-link {
-        text-align: center;
-    }
-    .main-content {
+    
+    #page-content-wrapper {
         margin-left: 0;
+        width: 100%;
     }
-    .jumbotron {
-        text-align: center;
-        height: auto !important;
-        padding-bottom: 5rem !important;
+    
+    .img-hero {
+        margin-top: 2rem;
+        max-height: 50vh;
     }
-    .jumbotron .col-md-7, .jumbotron .col-md-5 {
-        margin-bottom: 2rem;
+
+    /* Menu jadi horizontal di HP */
+    #sidebar-nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
