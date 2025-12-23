@@ -76,3 +76,29 @@ body {
         flex-wrap: wrap;
     }
 }
+
+/* --- TAMBAHAN UNTUK ANIMASI --- */
+
+/* 1. Keadaan Awal Elemen Scroll (Sembunyi dulu) */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px); /* Geser ke bawah 50px */
+    transition: all 1s ease;     /* Durasi transisi CSS */
+}
+
+/* 2. Keadaan Akhir (Muncul) - Class ini akan ditembak oleh jQuery */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);    /* Kembali ke posisi asal */
+}
+
+/* 3. Keadaan Awal Hero Section (Untuk animasi pembuka) */
+.hero-text-anim {
+    opacity: 0;
+    margin-left: -50px; /* Geser ke kiri dulu */
+}
+
+.hero-img-anim {
+    opacity: 0;
+    margin-right: -50px; /* Geser ke kanan dulu */
+}
